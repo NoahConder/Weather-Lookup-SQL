@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Lookup</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+<body>
+
+<!-- Header -->
+<header>
+    <nav class="navbar navbar-expand bg-dark border-bottom border-body" data-bs-theme="dark">
+
+        <div class="container">
+            <a class="navbar-brand" href="/">Weather Lookup</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="/sql">SQL Database Viewer</a>
+                    <a class="nav-link" href="/weather">Weather Lookup Tool</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Full-width Jumbotron -->
+
+    <div class="h-300 p-1 text-center">
+        <h1 class="display-1 transparent-bg"><%= weatherData.location_name %></h1>
+        <h3 class="display-6"><%= weatherData.feels_like %>°F</h3>
+        <p id="bing_bong">Information accurate as of: </p>
+    </div>
+
+
+<!-- Main Content -->
+<div class="parent container d-flex justify-content-center align-items-center h-100">
+<main class="container">
+    <body>
+    <section class="text-center">
+        <style>
+            /* Increase font size for h4 elements */
+            .col-lg-3 h4 {
+                font-size: 3em; /* You can adjust the size as needed */
+            }
+
+            /* Increase icon size */
+            .col-lg-3 i {
+                font-size: 3em; /* You can adjust the size as needed */
+            }
+        </style>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-5 mb-md-5 mb-lg-0 position-relative">
+                <h1><i class="bi bi-thermometer"></i></h1>
+                <h5 class="text-dark fw-bold mb-3">Feels Like</h5>
+                <h4 class="fw-normal text-primary mb-0"><%= weatherData.feels_like %>°F</h4>
+                <div class="vr vr-blurry position-absolute my-0 h-100 d-none d-md-block top-0 end-0"></div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-5 mb-md-5 mb-lg-0 position-relative">
+                <h1><i class="bi bi-droplet text-dark mb-4"></i></h1>
+                <h5 class="text-dark fw-bold mb-3">Humidity</h5>
+                <h4 class="fw-normal text-primary mb-0"><%= weatherData.humidity %>%</h4>
+                <div class="vr vr-blurry position-absolute my-0 h-100 d-none d-md-block top-0 end-0"></div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-5 mb-md-0 position-relative">
+                <h1><i class="bi bi-cloud"></i></h1>
+                <h5 class="text-dark fw-bold mb-3">Conditions</h5>
+                <h4 class="fw-normal text-primary mb-0"><%= weatherData.conditions %></h4>
+                <div class="vr vr-blurry position-absolute my-0 h-100 d-none d-md-block top-0 end-0"></div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-5 mb-md-0 position-relative">
+                <h1><i class="bi bi-clouds"></i></h1>
+                <h5 class="text-dark fw-bold mb-3">Detailed Conditions</h5>
+                <h4 class="fw-normal text-primary mb-0"><%= weatherData.detailed_conditions %></h4>
+            </div>
+        </div>
+        </div>
+    </section>
+    </body>
+
+    <div class="b-example-divider"></div>
+
+    <div class="container">
+    </div>
+
+    <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+                <li class="nav-item"><a href="https://github.com/NoahConder" class="nav-link px-2 text-body-secondary">GitHub</a></li>
+            </ul>
+            <p class="text-center text-body-secondary">Find more of my projects on GitHub!</p>
+        </footer>
+    </div>
+
+    <div class="b-example-divider"></div>
+
+</main>
+
+<!-- Optional JavaScript -->
+<!-- Bootstrap Bundle with Popper -->
+<script>
+    const currentDate = new Date();
+
+    // Format the date in 12-hour format with AM/PM
+    const options = { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+    const formattedTime = currentDate.toLocaleString('en-US', options);
+
+    document.getElementById("bing_bong").textContent = `Information accurate as of: ${formattedTime}`
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous" defer></script>
+</body>
+</html>

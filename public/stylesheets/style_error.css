@@ -1,0 +1,30 @@
+#input {
+  padding: 0px 120px 0px 0px;
+}
+#error {
+    padding: 0px 500px 0px 0px;
+}
+.text_error {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
+    padding: 300px 0px 0px 0px;
+}
+.button_error {
+    line-height: 65px;
+    text-align: center;
+}
+.button_submit {
+    line-height: 65px;
+    text-align: center;
+}
+.sent {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 0px;
+    padding: 150px 0px 0px 0px;
+}
+* { box-sizing: border-box; }
+body {
+  font: 16px Arial;
+}

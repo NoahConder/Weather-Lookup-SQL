@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Lookup</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/autocomplete.css">
+
+    <style>
+        .form_button_1 {
+            margin-top: 7px; /* Add some margin at the bottom */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <nav class="navbar navbar-expand bg-dark border-bottom border-body" data-bs-theme="dark">
+
+        <div class="container">
+            <a class="navbar-brand" href="/">Weather Lookup</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="/sql">SQL Database Viewer</a>
+                    <a class="nav-link" href="/weather">Weather Lookup Tool</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Full-width Jumbotron -->
+<div class="h-300 p-1 text-center">
+    <h1 class="display-1 transparent-bg">Weather</h1>
+    <P>A global weather tool allowing users to search for weather information effortlessly using zipcodes, postal codes, or city names.</P>
+</div>
+
+<!-- Main Content -->
+<main class="container">
+
+    <div class="mb-3">
+        <form id="location_form" action="/weather_handle" method="post">
+            <label for="formGroupExampleInput" class="form-label">Location</label>
+            <input type="text" class="form-control" id="location_input_box" name="location_input_box" autocomplete="off" placeholder="Search City or Zip/Postal Code">
+    <div id="autocomplete_results"></div> <!-- Display autocomplete results here -->
+    <input class="btn btn-primary form_button_1" type="submit" value="Submit" id="submit">
+    <input class="btn btn-primary form_button_1" type="button" value="Use Current Location" id="location_finder">
+        </form>
+    </div>
+    <form id="weatherForm" method="post" action="/weather_handle" style="display: none;">
+        <input type="hidden" id="latitude" name="latitude" value="">
+        <input type="hidden" id="longitude" name="longitude" value="">
+    </form>
+
+
+    <div class="b-example-divider"></div>
+
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+                <li class="nav-item"><a href="https://github.com/NoahConder" class="nav-link px-2 text-body-secondary">GitHub</a></li>
+            </ul>
+            <p class="text-center text-body-secondary">Find more of my projects on GitHub!</p>
+        </footer>
+    </div>
+
+    <div class="b-example-divider"></div>
+</main>
+
+<!-- Optional JavaScript -->
+<!-- Bootstrap Bundle with Popper -->
+<script src="/javascripts/location_puller.js"></script>
+<script src="/javascripts/autocomplete.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous" defer></script>
+</body>
+</html>
+

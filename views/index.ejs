@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Lookup</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .jumbotron {
+      margin-bottom: 20px; /* Add some margin at the bottom */
+    }
+    .btn-secondary {
+      background-color: #476f95;
+      border-color: #476f95;
+    }
+
+    .btn-secondary:hover {
+      background-color: #a3b7ca;
+      border-color: #a3b7ca;
+      color: #F0F8FF;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <nav class="navbar navbar-expand bg-dark border-bottom border-body" data-bs-theme="dark">
+
+    <div class="container">
+      <a class="navbar-brand" href="/">Weather Lookup</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link" href="/sql">SQL Database Viewer</a>
+          <a class="nav-link" href="/weather">Weather Lookup Tool</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Full-width Jumbotron -->
+<div class="jumbotron jumbotron-fluid bg-body-tertiary">
+
+  <div class="container text-center py-5">
+    <h1 class="display-4">Weather Tool & Database</h1>
+
+  </div>
+</div>
+
+<!-- Main Content -->
+<main class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+        <h2>SQL Database Viewer</h2>
+        <p>Quickly access all previous searched weather results. All data is stored in a SQL database and is sorted in pages of 10.</p>
+        <p><a class="btn btn-secondary" href="/sql" role="button">View details &raquo;</a></p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+        <h2>Weather Lookup Tool</h2>
+        <p>Get the weather from any destination globally and pull a variety of weather data such as the current temperature, feels like temperature, conditions, and more. All saved to the database for later viewing.</p>
+        <p><a class="btn btn-secondary" href="/weather" role="button">View details &raquo;</a></p>
+      </div>
+  </div>
+  <div class="b-example-divider"></div>
+
+  <div class="container">
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="https://github.com/NoahConder" class="nav-link px-2 text-body-secondary">GitHub</a></li>
+      </ul>
+      <p class="text-center text-body-secondary">Find more of my projects on GitHub!</p>
+    </footer>
+  </div>
+
+  <div class="b-example-divider"></div>
+</main>
+
+<!-- Optional JavaScript -->
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous" defer></script>
+</body>
+</html>
